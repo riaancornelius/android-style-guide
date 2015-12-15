@@ -37,11 +37,11 @@ Import statements are not line-wrapped. The column limit (See later section) doe
 
 Import statements are divided into the following groups, in this order, with each group separated by a single blank line:
 
-1. All static imports in a single group
-2. imports from your own top level package
-3. Third-party imports, one group per top-level package, in ASCII sort order. For example: ```android```, ```com```, ```junit```, ```org```, ```sun```
-4. ```java``` imports
-5. ```javax``` imports
+1. Third-party imports, one group per top-level package, in ASCII sort order. For example: ```android```, ```com```, ```junit```, ```org```, ```sun```
+2. ```java``` imports
+3. ```javax``` imports
+4. imports from your own top level package
+5. All static imports in a single group
 
 Within a group there are no blank lines, and the imported names appear in ASCII sort order. (**Note:** this is not the same as the import *statements* being in ASCII sort order; the presence of semicolons warps the result.)
 
@@ -483,6 +483,23 @@ Exception: In tests, a caught exception may be ignored without comment if it is 
   		fail();
 	} catch (NoSuchElementException expected) {}
 
+### NEVER catch generic exception
+
+You should never do this:
+
+	try {
+	    someComplicatedIOFunction();        // may throw IOException
+	    someComplicatedParsingFunction();   // may throw ParsingException
+	    someComplicatedSecurityFunction();  // may throw SecurityException
+	    // phew, made it all the way
+	} catch (Exception e) {                 // I'll just catch all exceptions
+	    handleError();                      // with one generic handler!
+	}
+
+Do not do this. In almost all cases it is inappropriate to catch generic `Exception` or `Throwable` (preferably not `Throwable` because it includes `Error` exceptions). It is very dangerous because it means that Exceptions you never expected (including `RuntimeExceptions` like `ClassCastException`) get caught in application-level error handling. 
+
+It obscures the failure handling properties of your code, meaning if someone adds a new type of Exception in the code you're calling, the compiler won't help you realize you need to handle the error differently. In most cases you shouldn't be handling different types of exception the same way.
+
 ### Static members: qualified using class 
 
 When a reference to a static class member must be qualified, it is qualified with that class's name, not with a reference or expression of that class's type.
@@ -550,3 +567,18 @@ Important: it is not appropriate to cite this exception to justify omitting rele
 
 Javadoc is not always present on a method that overrides a supertype method.
 
+# License
+
+Copyright 2015 Riaan Cornelius.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
