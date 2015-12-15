@@ -1,5 +1,8 @@
 # Style guide
 
+This is an attempt to formalise the style I use for my code. This will be a living set of documents as I figure out what I missed.
+
+I'm also planning on adding some performance / memory guidelines. 
 
 ## Java style guide
 
