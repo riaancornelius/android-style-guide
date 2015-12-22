@@ -462,6 +462,35 @@ A method is marked with the ```@Override``` annotation whenever it is legal. Thi
 
 **Exception:** ```@Override``` may be omitted when the parent method is ```@Deprecated```.
 
+### Static members: qualified using class 
+
+When a reference to a static class member must be qualified, it is qualified with that class's name, not with a reference or expression of that class's type.
+
+	Foo aFoo = ...;
+	Foo.aStaticMethod(); // good
+	aFoo.aStaticMethod(); // bad
+	somethingThatYieldsAFoo().aStaticMethod(); // very bad
+
+### Finalizers: not used 
+
+It is extremely rare to override ```Object.finalize```.
+
+Tip: Don't do it. If you absolutely must, first read and understand Effective Java Item 7, "Avoid Finalizers," very carefully, and then don't do it.
+
+## Exception handling
+
+This is important enough to get it's own section
+
+### Basic exception handling
+
+Every Exception in Java extends the `Throwable` class (Directly or indirectly). The `Throwable` class has 2 direct subclasses: `Error` and `Exception`. Exceptions are further divided into checked and runtime exceptions.
+
+This gives us three types of exceptions in Java:
+
+1. **Errors:** Errors signify truly exceptional situations that your app cannot anticipate or recover from. For example, hardware failure, JVM crashes or out of memory errors. As these are so unpredictable and impossible to recover from, you should **never** catch these.
+2. **Checked Exceptions:** These are the exceptional scenarios that you can anticipate and recover from. Things like `FileNotFoundException` or `IOException`. These should be caught and logged as well as dealt with. If you are not going to deal with it, you should not catch it and let it propagate up to the caller to deal with.
+3. **Runtime Exceptions:** These are quite simply caused by bad programming or bugs in your code. These extend the `RuntimeException` class and include things like `NullPointerException` and `ArrayIndexOutOfBoundException`. These should never be caught and should rather be prevented by doing Null checks or bounds checking in your code.
+
 ### Caught exceptions: not ignored 
 
 Except as noted below, it is very rarely correct to do nothing in response to a caught exception. (Typical responses are to log it, or if it is considered "impossible", rethrow it as an AssertionError.)
@@ -500,20 +529,7 @@ Do not do this. In almost all cases it is inappropriate to catch generic `Except
 
 It obscures the failure handling properties of your code, meaning if someone adds a new type of Exception in the code you're calling, the compiler won't help you realize you need to handle the error differently. In most cases you shouldn't be handling different types of exception the same way.
 
-### Static members: qualified using class 
 
-When a reference to a static class member must be qualified, it is qualified with that class's name, not with a reference or expression of that class's type.
-
-	Foo aFoo = ...;
-	Foo.aStaticMethod(); // good
-	aFoo.aStaticMethod(); // bad
-	somethingThatYieldsAFoo().aStaticMethod(); // very bad
-
-### Finalizers: not used 
-
-It is extremely rare to override ```Object.finalize```.
-
-Tip: Don't do it. If you absolutely must, first read and understand Effective Java Item 7, "Avoid Finalizers," very carefully, and then don't do it.
 
 ## Javadoc 
 
