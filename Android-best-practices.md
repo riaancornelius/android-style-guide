@@ -25,3 +25,10 @@ The use of memory in an application can be the single-most important determinant
 Memory factors include how large the application footprint is (in storage and when resident in memory) and how the application churns memory (causing garbage collections, which has an effect on runtime performance).
 
 [Android best practices - Memory](https://github.com/riaancornelius/android-style-guide/blob/master/Android-best-practices-1-Memory.md)
+
+# Performance guidelines
+
+On Android, performance and memory are closely intertwined, since the memory footprint of the overall system can affect the performance of all of the processes, and since the garbage collector can have a significant impact on runtime performance. But the items in this section are targeted more specifically at runtime performance that is not necessarily memory-related.
+
+[Android best practices - Performance](https://github.com/riaancornelius/android-style-guide/blob/master/Android-best-practices-2-Performance.md)
+
