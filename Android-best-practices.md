@@ -32,3 +32,8 @@ On Android, performance and memory are closely intertwined, since the memory foo
 
 [Android best practices - Performance](https://github.com/riaancornelius/android-style-guide/blob/master/Android-best-practices-2-Performance.md)
 
+# Networking guidelines
+
+This section covers practices around network behavior of applications.
+
+[Android best practices - Networking](https://github.com/riaancornelius/android-style-guide/blob/master/Android-best-practices-3-Networking.md)
