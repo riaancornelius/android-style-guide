@@ -43,3 +43,9 @@ This section covers practices around network behavior of applications.
 This section covers practices around the Java programming language and core libraries.
 
 [Android best practices - Language](https://github.com/riaancornelius/android-style-guide/blob/master/Android-best-practices-4-Language.md)
+
+# Storage
+
+This section covers many practices that are specific to how data is stored and accessed on the platform.
+
+[Android best practices - Storage](https://github.com/riaancornelius/android-style-guide/blob/master/Android-best-practices-5-Storage.md)
