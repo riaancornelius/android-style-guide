@@ -1,3 +1,5 @@
+Read more at [Developing for Android IV - The Rules: Networking](https://medium.com/google-developers/developing-for-android-iv-e7dc4ce0a59#.v7m3y07qy)
+
 # Don’t Over-Sync
 Sending data to and from the cloud is one of the largest consumers of battery. The problem is not that any particular network transaction kills the device, but rather the sheer number of background applications and services making these requests and the side effect on the inability of the device to sleep (or for the radio to enter low power mode) for any reasonable length of time causes a significant drain on the battery in general. 
 
