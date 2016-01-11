@@ -49,3 +49,15 @@ This section covers practices around the Java programming language and core libr
 This section covers many practices that are specific to how data is stored and accessed on the platform.
 
 [Android best practices - Storage](https://github.com/riaancornelius/android-style-guide/blob/master/Android-best-practices-5-Storage.md)
+
+# Framework
+
+This section details important details related to Android framework APIs and usage patterns.
+
+[Android best practices - Framework](https://github.com/riaancornelius/android-style-guide/blob/master/Android-best-practices-6-Framework.md)
+
+# User Interface
+
+This section covers important details for patterns in UI development, specifically around performance and user experience.
+
+[Android best practices - User Interface](https://github.com/riaancornelius/android-style-guide/blob/master/Android-best-practices-7-UI.md)
