@@ -1,3 +1,13 @@
+# IntelliJ style settings
+
+IntelliJ IDEA code style settings for my Java and Android projects.
+
+## Installation
+
+ * Run the `install.sh` script in bash.
+ * Restart IntelliJ if it's running.
+ * Open IntelliJ Project Settings -> Editor -> Code Style, change the code style for the project to the one you want.
+
 # Style guide
 
 This is an attempt to formalise the style I use for my code. This will be a living set of documents as I figure out what I missed.
@@ -23,6 +33,8 @@ These mainly consider performance, memory management and battery / internet usag
 [Android best practices](https://github.com/riaancornelius/android-style-guide/blob/master/Android-best-practices.md)
 
 ### Useful resources:
+
+Square's very useful [Java Code Styles repo](https://github.com/square/java-code-styles) formed the basis of my style settings and installation. I changed a few minor things and added in the import statement ordering as per my style guides, but otherwise mostly re-used theirs.
 
 These were used to form the basis of my style guides:
 
