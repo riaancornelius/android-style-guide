@@ -439,10 +439,10 @@ Unlike the rest of resources, style names are written in __UpperCamelCase__.
 As a general rule you should try to group similar attributes together. A good way of ordering the most common attributes is:
 
 1. View Id
-2. Style
-3. Layout width and layout height
-4. Other layout attributes, sorted alphabetically
-5. Remaining attributes, sorted alphabetically
+2. Layout width and layout height
+3. Other layout attributes, sorted alphabetically
+4. Remaining attributes, sorted alphabetically
+5. Style
 
 ## Tests style rules
 
